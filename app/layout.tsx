@@ -1,6 +1,7 @@
 // app/layout.tsx
 import '../styles/globals.css';
 import type { Metadata } from 'next';
+import SmoothScrollProvider from '../components/SmoothScrollProvider'
 
 export const metadata: Metadata = {
   title: 'TYDS 天羽設計',
@@ -15,7 +16,11 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant">
       <head />
-      <body>{children}</body>
+      <body>
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
+      </body>
     </html>
   );
 }
